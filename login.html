@@ -111,7 +111,7 @@
         </form>
     </div>
 
-    <script>
+     <script>
         AOS.init();
         feather.replace();
         
@@ -127,6 +127,18 @@
             document.getElementById('driver-option').classList.remove('active');
             document.getElementById('profile_type').value = 'company';
         });
+
+        // Redireciona ao entrar
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const profileType = document.getElementById('profile_type').value;
+            if (profileType === 'driver') {
+                window.location.href = 'driver-dashboard.html';
+            } else {
+                window.location.href = 'company-dashboard.html';
+            }
+        });
     </script>
 </body>
 </html>
+
