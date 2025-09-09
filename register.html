@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - FretePR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .btn-primary {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background-color: #1D4ED8;
+        }
+        .profile-selector {
+            display: flex;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .profile-option {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .profile-option.active {
+            background-color: #1E3A8A;
+            color: white;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full bg-white p-8 rounded-xl shadow-md" data-aos="fade-up">
+        <div>
+            <div class="flex justify-center items-center">
+                <i data-feather="truck" class="h-12 w-12 text-primary"></i>
+                <h2 class="ml-2 text-3xl font-bold text-primary">FretePR</h2>
+            </div>
+            <h2 class="mt-6 text-center text-2xl font-extrabold text-gray-900">
+                Crie sua conta
+            </h2>
+        </div>
+        
+        <!-- Profile Selector -->
+        <div class="profile-selector mt-6">
+            <div class="profile-option active" id="driver-option">
+                <i data-feather="user" class="h-5 w-5 inline mr-2"></i>
+                Motorista
+            </div>
+            <div class="profile-option" id="company-option">
+                <i data-feather="briefcase" class="h-5 w-5 inline mr-2"></i>
+                Empresa
+            </div>
+        </div>
+        
+        <!-- Driver Registration Form -->
+        <form class="mt-6 form-section active" id="driver-form">
+            <div class="space-y-4">
+                <div>
+                    <label for="driver-name" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                    <input type="text" id="driver-name" name="driver-name" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="driver-email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                    <input type="email" id="driver-email" name="driver-email" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="driver-phone" class="block text-sm font-medium text-gray-700">Telefone</label>
+                    <input type="tel" id="driver-phone" name="driver-phone" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="driver-cpf" class="block text-sm font-medium text-gray-700">CPF</label>
+                    <input type="text" id="driver-cpf" name="driver-cpf" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="driver-password" class="block text-sm font-medium text-gray-700">Senha</label>
+                    <input type="password" id="driver-password" name="driver-password" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="driver-confirm-password" class="block text-sm font-medium text-gray-700">Confirmar Senha</label>
+                    <input type="password" id="driver-confirm-password" name="driver-confirm-password" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <button type="submit" class="btn-primary">
+                    Criar Conta
+                </button>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <p class="text-sm text-gray-600">
+                    Já tem uma conta? 
+                    <a href="login.html" class="font-medium text-primary hover:text-blue-500">
+                        Entrar
+                    </a>
+                </p>
+            </div>
+        </form>
+        
+        <!-- Company Registration Form -->
+        <form class="mt-6 form-section" id="company-form">
+            <div class="space-y-4">
+                <div>
+                    <label for="company-name" class="block text-sm font-medium text-gray-700">Nome da Empresa</label>
+                    <input type="text" id="company-name" name="company-name" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="company-email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                    <input type="email" id="company-email" name="company-email" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="company-phone" class="block text-sm font-medium text-gray-700">Telefone</label>
+                    <input type="tel" id="company-phone" name="company-phone" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="company-cnpj" class="block text-sm font-medium text-gray-700">CNPJ</label>
+                    <input type="text" id="company-cnpj" name="company-cnpj" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="company-password" class="block text-sm font-medium text-gray-700">Senha</label>
+                    <input type="password" id="company-password" name="company-password" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="company-confirm-password" class="block text-sm font-medium text-gray-700">Confirmar Senha</label>
+                    <input type="password" id="company-confirm-password" name="company-confirm-password" required class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm">
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <button type="submit" class="btn-primary">
+                    Criar Conta
+                </button>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <p class="text-sm text-gray-600">
+                    Já tem uma conta? 
+                    <a href="login.html" class="font-medium text-primary hover:text-blue-500">
+                        Entrar
+                    </a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        AOS.init();
+        feather.replace();
+        
+        // Profile type selector
+        document.getElementById('driver-option').addEventListener('click', function() {
+            this.classList.add('active');
+            document.getElementById('company-option').classList.remove('active');
+            document.getElementById('driver-form').classList.add('active');
+            document.getElementById('company-form').classList.remove('active');
+        });
+        
+        document.getElementById('company-option').addEventListener('click', function() {
+            this.classList.add('active');
+            document.getElementById('driver-option').classList.remove('active');
+            document.getElementById('company-form').classList.add('active');
+            document.getElementById('driver-form').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Motorista - FretePR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .btn-primary {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1D4ED8;
+        }
+        .btn-secondary {
+            background-color: #10B981;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #059669;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #6B7280;
+            font-size: 12px;
+        }
+        .nav-item.active {
+            color: #1E3A8A;
+        }
+        .main-content {
+            padding-bottom: 70px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-primary text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i data-feather="truck" class="h-8 w-8"></i>
+                <h1 class="ml-2 text-xl font-bold">FretePR</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <i data-feather="bell" class="h-6 w-6"></i>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full text-xs h-4 w-4 flex items-center justify-center">2</span>
+                </div>
+                <div class="flex items-center">
+                    <img src="http://static.photos/people/40x40/1" alt="Motorista" class="h-10 w-10 rounded-full">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="main-content p-4">
+        <!-- Welcome Section -->
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">Olá, João Silva!</h2>
+            <p class="text-gray-600">Confira os fretes disponíveis perto de você.</p>
+        </div>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-4 rounded-lg shadow-sm card-hover">
+                <div class="flex items-center">
+                    <div class="p-2 rounded-full bg-blue-100 text-blue-600">
+                        <i data-feather="package" class="h-5 w-5"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-gray-500">Fretes Ativos</p>
+                        <p class="text-lg font-bold">2</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm card-hover">
+                <div class="flex items-center">
+                    <div class="p-2 rounded-full bg-green-100 text-green-600">
+                        <i data-feather="dollar-sign" class="h-5 w-5"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-gray-500">Ganhos (mês)</p>
+                        <p class="text-lg font-bold">R$ 5.240</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Available Freights -->
+        <h2 class="text-xl font-bold text-gray-800 mb-4">Fretes Disponíveis</h2>
+        
+        <!-- Filters -->
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+            <div class="flex flex-wrap gap-2">
+                <select class="border border-gray-300 rounded-md px-3 py-2 text-sm">
+                    <option>Origem</option>
+                    <option>Curitiba</option>
+                    <option>Londrina</option>
+                    <option>Maringá</option>
+                    <option>Cascavel</option>
+                </select>
+                <select class="border border-gray-300 rounded-md px-3 py-2 text-sm">
+                    <option>Destino</option>
+                    <option>São Paulo</option>
+                    <option>Porto Alegre</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Florianópolis</option>
+                </select>
+                <select class="border border-gray-300 rounded-md px-3 py-2 text-sm">
+                    <option>Tipo de Carga</option>
+                    <option>Grãos</option>
+                    <option>Eletrônicos</option>
+                    <option>Móveis</option>
+                    <option>Alimentos</option>
+                </select>
+                <button class="bg-gray-200 text-gray-800 px-3 py-2 rounded-md text-sm">Aplicar Filtros</button>
+            </div>
+        </div>
+        
+        <!-- Freight Cards -->
+        <div class="space-y-4 mb-8">
+            <!-- Freight Card 1 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm card-hover" data-aos="fade-up">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="font-semibold text-lg">Curitiba → São Paulo</h3>
+                        <p class="text-gray-500 text-sm">Postado há 2 horas</p>
+                    </div>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Disponível</span>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Carga</p>
+                        <p class="font-medium">Eletrônicos</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Peso/Volume</p>
+                        <p class="font-medium">2.5 ton</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Data Limite</p>
+                        <p class="font-medium">28/10/2023</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Valor</p>
+                        <p class="font-medium text-green-600">R$ 2.800</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2">
+                    <a href="freight-detail.html" class="btn-primary flex-1 text-center">Ver Detalhes</a>
+                    <button class="btn-secondary flex-1">Aceitar Frete</button>
+                </div>
+            </div>
+            
+            <!-- Freight Card 2 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm card-hover" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="font-semibold text-lg">Londrina → Porto Alegre</h3>
+                        <p class="text-gray-500 text-sm">Postado há 5 horas</p>
+                    </div>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Disponível</span>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Carga</p>
+                        <p class="font-medium">Grãos</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Peso/Volume</p>
+                        <p class="font-medium">15 ton</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Data Limite</p>
+                        <p class="font-medium">30/10/2023</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Valor</p>
+                        <p class="font-medium text-green-600">R$ 4.200</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2">
+                    <a href="freight-detail.html" class="btn-primary flex-1 text-center">Ver Detalhes</a>
+                    <button class="btn-secondary flex-1">Aceitar Frete</button>
+                </div>
+            </div>
+            
+            <!-- Freight Card 3 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm card-hover" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="font-semibold text-lg">Maringá → Florianópolis</h3>
+                        <p class="text-gray-500 text-sm">Postado há 1 dia</p>
+                    </div>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Disponível</span>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Carga</p>
+                        <p class="font-medium">Móveis</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Peso/Volume</p>
+                        <p class="font-medium">8 ton</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Data Limite</p>
+                        <p class="font-medium">02/11/2023</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Valor</p>
+                        <p class="font-medium text-green-600">R$ 3.500</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2">
+                    <a href="freight-detail.html" class="btn-primary flex-1 text-center">Ver Detalhes</a>
+                    <button class="btn-secondary flex-1">Aceitar Frete</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Active Freights -->
+        <h2 class="text-xl font-bold text-gray-800 mb-4">Seus Fretes Ativos</h2>
+        
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-semibold">Curitiba → São Paulo</h3>
+                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Em andamento</span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <p class="text-sm text-gray-500">Carga</p>
+                    <p class="font-medium">Eletrônicos</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Valor</p>
+                    <p class="font-medium text-green-600">R$ 2.800</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Data de Retirada</p>
+                    <p class="font-medium">25/10/2023</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Previsão de Entrega</p>
+                    <p class="font-medium">28/10/2023</p>
+                </div>
+            </div>
+            
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 60%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">60% concluído</p>
+            
+            <div class="mt-4">
+                <a href="active-freight-detail.html" class="btn-primary block text-center">Acompanhar Frete</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="driver-dashboard.html" class="nav-item active">
+            <i data-feather="home" class="h-5 w-5 mb-1"></i>
+            <span>Início</span>
+        </a>
+        <a href="driver-freights.html" class="nav-item">
+            <i data-feather="package" class="h-5 w-5 mb-1"></i>
+            <span>Fretes</span>
+        </a>
+        <a href="notifications.html" class="nav-item">
+            <i data-feather="bell" class="h-5 w-5 mb-1"></i>
+            <span>Alertas</span>
+        </a>
+        <a href="driver-profile.html" class="nav-item">
+            <i data-feather="user" class="h-5 w-5 mb-1"></i>
+            <span>Perfil</span>
+        </a>
+    </div>
+
+    <script>
+        AOS.init();
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FretePR - Sistema de Fretes para Caminhoneiros</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#374151',
+                        accent: '#3B82F6',
+                        light: '#F3F4F6',
+                        dark: '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1D4ED8;
+        }
+        .btn-secondary {
+            background-color: #374151;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #4B5563;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="truck" class="h-8 w-8"></i>
+                <span class="text-xl font-bold">FretePR</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-blue-200 transition">Início</a>
+                <a href="#about" class="hover:text-blue-200 transition">Sobre</a>
+                <a href="#features" class="hover:text-blue-200 transition">Funcionalidades</a>
+                <a href="#contact" class="hover:text-blue-200 transition">Contato</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="login.html" class="btn-secondary">Entrar</a>
+                <a href="register.html" class="btn-primary">Cadastrar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 bg-gradient-to-r from-primary to-blue-800 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Conectando motoristas e empresas no Paraná</h1>
+                <p class="text-xl mb-8">Sistema inteligente de fretes para facilitar o transporte de cargas em todo o estado.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="register.html" class="btn-primary text-center">Começar Agora</a>
+                    <a href="#features" class="bg-white text-primary px-6 py-3 rounded-lg font-semibold text-center">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <img src="http://static.photos/transport/640x360/1" alt="Sistema de Fretes" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Funcionalidades Principais</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-light p-6 rounded-lg shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary p-3 rounded-full w-12 h-12 flex items-center justify-center text-white mb-4">
+                        <i data-feather="truck"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Para Motoristas</h3>
+                    <p class="text-secondary">Encontre fretes disponíveis, gerencie suas viagens e aumente sua renda.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-light p-6 rounded-lg shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary p-3 rounded-full w-12 h-12 flex items-center justify-center text-white mb-4">
+                        <i data-feather="briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Para Empresas</h3>
+                    <p class="text-secondary">Contrate motoristas confiáveis e gerencie seus fretes de forma eficiente.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-light p-6 rounded-lg shadow-md card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-primary p-3 rounded-full w-12 h-12 flex items-center justify-center text-white mb-4">
+                        <i data-feather="map"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Rota Inteligente</h3>
+                    <p class="text-secondary">Sistema de rotas otimizadas para economizar tempo e combustível.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-light p-6 rounded-lg shadow-md card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-primary p-3 rounded-full w-12 h-12 flex items-center justify-center text-white mb-4">
+                        <i data-feather="dollar-sign"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Pagamento Seguro</h3>
+                    <p class="text-secondary">Sistema de pagamento integrado e seguro para ambas as partes.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-light p-6 rounded-lg shadow-md card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-primary p-3 rounded-full w-12 h-12 flex items-center justify-center text-white mb-4">
+                        <i data-feather="bell"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Alertas em Tempo Real</h3>
+                    <p class="text-secondary">Notificações instantâneas sobre fretes e atualizações importantes.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-light p-6 rounded-lg shadow-md card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-primary p-3 rounded-full w-12 h-12 flex items-center justify-center text-white mb-4">
+                        <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Relatórios Detalhados</h3>
+                    <p class="text-secondary">Acompanhe métricas e performance com relatórios completos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Como Funciona</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary rounded-full w-16 h-16 flex items-center justify-center text-white mx-auto mb-4">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cadastre-se</h3>
+                    <p class="text-secondary">Crie sua conta como motorista ou empresa em poucos minutos.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary rounded-full w-16 h-16 flex items-center justify-center text-white mx-auto mb-4">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Conecte-se</h3>
+                    <p class="text-secondary">Empresas publicam fretes e motoristas encontram oportunidades.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-primary rounded-full w-16 h-16 flex items-center justify-center text-white mx-auto mb-4">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Execute</h3>
+                    <p class="text-secondary">Realize o transporte com segurança e receba pelo serviço.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Pronto para começar?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Junte-se à nossa comunidade de motoristas e empresas e transforme a forma como você gerencia fretes.
+            </p>
+            <a href="register.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block" data-aos="fade-up" data-aos-delay="200">
+                Criar Conta Gratuita
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-feather="truck" class="h-8 w-8"></i>
+                        <span class="text-xl font-bold">FretePR</span>
+                    </div>
+                    <p class="text-gray-400">Conectando motoristas e empresas no Paraná com eficiência e confiança.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Funcionalidades</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Suporte</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Central de Ajuda</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contato</h3>
+                    <p class="text-gray-400 mb-2">contato@fretepr.com.br</p>
+                    <p class="text-gray-400 mb-2">+55 (41) 99999-9999</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 FretePR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>

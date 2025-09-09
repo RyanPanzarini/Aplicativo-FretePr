@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Frete - FretePR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .btn-primary {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1D4ED8;
+        }
+        .btn-secondary {
+            background-color: #10B981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #059669;
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #6B7280;
+            font-size: 12px;
+        }
+        .nav-item.active {
+            color: #1E3A8A;
+        }
+        .main-content {
+            padding-bottom: 70px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-primary text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="driver-dashboard.html" class="mr-3">
+                    <i data-feather="arrow-left" class="h-5 w-5"></i>
+                </a>
+                <h1 class="text-xl font-bold">Detalhes do Frete</h1>
+            </div>
+            <div class="flex items-center">
+                <img src="http://static.photos/people/40x40/1" alt="Motorista" class="h-10 w-10 rounded-full">
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="main-content p-4">
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h2 class="text-xl font-bold">Curitiba → São Paulo</h2>
+                    <p class="text-gray-500">Postado por: Transportes LTDA</p>
+                </div>
+                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Disponível</span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <p class="text-sm text-gray-500">Carga</p>
+                    <p class="font-medium">Eletrônicos</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Peso/Volume</p>
+                    <p class="font-medium">2.5 ton / 8 m³</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Data Limite Retirada</p>
+                    <p class="font-medium">28/10/2023</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Data Limite Entrega</p>
+                    <p class="font-medium">31/10/2023</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Valor do Frete</p>
+                    <p class="font-medium text-green-600 text-lg">R$ 2.800</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Route Map -->
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+            <h3 class="font-semibold mb-3">Rota</h3>
+            <div class="bg-gray-200 h-40 rounded-lg flex items-center justify-center">
+                <i data-feather="map" class="h-12 w-12 text-gray-500"></i>
+                <span class="ml-2 text-gray-500">Visualização do mapa da rota</span>
+            </div>
+            <div class="mt-3 grid grid-cols-2 gap-2">
+                <div class="bg-blue-50 p-2 rounded">
+                    <p class="text-xs text-gray-500">Origem</p>
+                    <p class="font-medium">Curitiba, PR</p>
+                </div>
+                <div class="bg-green-50 p-2 rounded">
+                    <p class="text-xs text-gray-500">Destino</p>
+                    <p class="font-medium">São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="mt-3 bg-yellow-50 p-3 rounded">
+                <p class="text-sm"><i data-feather="info" class="h-4 w-4 inline mr-1"></i> Distância aproximada: 400 km</p>
+            </div>
+        </div>
+        
+        <!-- Cargo Details -->
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+            <h3 class="font-semibold mb-3">Detalhes da Carga</h3>
+            <div class="space-y-3">
+                <div>
+                    <p class="text-sm text-gray-500">Tipo de Carga</p>
+                    <p class="font-medium">Eletrônicos (equipamentos de informática)</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Embalagem</p>
+                    <p class="font-medium">Caixas de papelão paletizadas</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Requisitos Especiais</p>
+                    <p class="font-medium">Cuidado com impactos, evitar umidade</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Documentação Necessária</p>
+                    <p class="font-medium">Nota fiscal, documento de transporte</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Company Info -->
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+            <h3 class="font-semibold mb-3">Informações da Empresa</h3>
+            <div class="flex items-center mb-3">
+                <img src="http://static.photos/business/50x50/1" alt="Transportes LTDA" class="h-12 w-12 rounded-full mr-3">
+                <div>
+                    <p class="font-medium">Transportes LTDA</p>
+                    <p class="text-sm text-gray-500">CNPJ: 12.345.678/0001-90</p>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <div class="flex items-center">
+                    <i data-feather="phone" class="h-4 w-4 text-gray-500 mr-2"></i>
+                    <span class="text-sm">(41) 99999-9999</span>
+                </div>
+                <div class="flex items-center">
+                    <i data-feather="mail" class="h-4 w-4 text-gray-500 mr-2"></i>
+                    <span class="text-sm">contato@transportesltda.com.br</span>
+                </div>
+                <div class="flex items-center">
+                    <i data-feather="map-pin" class="h-4 w-4 text-gray-500 mr-2"></i>
+                    <span class="text-sm">Rua das Empresas, 123 - Curitiba, PR</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Info -->
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+            <h3 class="font-semibold mb-3">Informações Adicionais</h3>
+            <div class="space-y-3">
+                <div>
+                    <p class="text-sm text-gray-500">Local de Carregamento</p>
+                    <p class="font-medium">Centro de Distribuição - Av. Industrial, 500, Curitiba, PR</p>
+                    <p class="text-sm text-gray-500">Horário: 8h às 17h (segunda a sexta)</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Local de Descarga</p>
+                    <p class="font-medium">Depósito Central - Rua Comercial, 300, São Paulo, SP</p>
+                    <p class="text-sm text-gray-500">Horário: 9h às 18h (segunda a sábado)</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Instruções Especiais</p>
+                    <p class="font-medium">Necessário confirmar agendamento com 24h de antecedência</p>
+                </div>
+                <div class="bg-blue-50 p-3 rounded">
+                    <p class="text-sm"><i data-feather="alert-circle" class="h-4 w-4 inline mr-1"></i> Este frete oferece pagamento via PIX em até 24h após a entrega confirmada.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="fixed bottom-16 left-0 right-0 bg-white p-4 shadow-md">
+            <button class="btn-secondary w-full mb-2">Aceitar Frete</button>
+            <button class="border border-primary text-primary w-full py-2 rounded-md font-medium">Fazer Pergunta</button>
+        </div>
+    </div>
+    
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="driver-dashboard.html" class="nav-item">
+            <i data-feather="home" class="h-5 w-5 mb-1"></i>
+            <span>Início</span>
+        </a>
+        <a href="driver-freights.html" class="nav-item">
+            <i data-feather="package" class="h-5 w-5 mb-1"></i>
+            <span>Fretes</span>
+        </a>
+        <a href="notifications.html" class="nav-item">
+            <i data-feather="bell" class="h-5 w-5 mb-1"></i>
+            <span>Alertas</span>
+        </a>
+        <a href="driver-profile.html" class="nav-item active">
+            <i data-feather="user" class="h-5 w-5 mb-1"></i>
+            <span>Perfil</span>
+        </a>
+    </div>
+
+    <script>
+        AOS.init();
+        feather.replace();
+    </script>
+</body>
+</html>
