@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações - FretePR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .btn-primary {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1D4ED8;
+        }
+        .sidebar {
+            background: #1E3A8A;
+            color: #fff;
+            min-width: 220px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 8px rgba(30,58,138,0.08);
+        }
+        .sidebar .sidebar-text {
+            color: #fff;
+        }
+        .sidebar a {
+            color: #fff;
+            border-radius: 6px;
+            margin-bottom: 4px;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar a:hover,
+        .sidebar a.active-tab {
+            background: #1D4ED8;
+            color: #fff;
+        }
+        .sidebar i {
+            color: #fff !important;
+        }
+        @media (max-width: 1024px) {
+            .sidebar {
+                position: static;
+                height: auto;
+                min-width: 100%;
+                flex-direction: row;
+                box-shadow: none;
+            }
+            .sidebar nav {
+                flex-direction: row;
+            }
+            .sidebar a {
+                margin-bottom: 0;
+                margin-right: 8px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="sidebar">
+        <div class="p-5">
+            <div class="flex items-center">
+                <i data-feather="truck" class="h-8 w-8"></i>
+                <span class="sidebar-text ml-2 text-xl font-bold">FretePR</span>
+            </div>
+        </div>
+          <nav class="mt-10">
+            <a href="company-dashboard.html" class="flex items-center px-6 py-3 active-tab">
+                <i data-feather="home" class="h-5 w-5"></i>
+                <span class="sidebar-text ml-3">Início</span>
+            </a>
+            <a href="company-freight.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
+                <i data-feather="package" class="h-5 w-5"></i>
+                <span class="sidebar-text ml-3">Meus Fretes</span>
+            </a>
+            <a href="create-freight.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
+                <i data-feather="plus-circle" class="h-5 w-5"></i>
+                <span class="sidebar-text ml-3">Criar Frete</span>
+            </a>
+            <a href="company-profile.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
+                <i data-feather="user" class="h-5 w-5"></i>
+                <span class="sidebar-text ml-3">Perfil</span>
+            </a>
+            <a href="notifications.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
+                <i data-feather="bell" class="h-5 w-5"></i>
+                <span class="sidebar-text ml-3">Notificações</span>
+            </a>
+            <a href="login.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
+                <i data-feather="log-out" class="h-5 w-5"></i>
+                <span class="sidebar-text ml-3">Sair</span>
+            </a>
+        </nav>
+    </div>
+    <div class="ml-[240px] p-8">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">Notificações</h2>
+            <a href="login.html" class="btn-primary">Sair</a>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <ul class="divide-y divide-gray-200">
+                <li class="py-4 flex items-start">
+                    <i data-feather="alert-circle" class="h-6 w-6 text-yellow-500 mr-4"></i>
+                    <div>
+                        <p class="font-medium text-gray-800">Novo frete disponível para contratação.</p>
+                        <span class="text-xs text-gray-500">Recebido em 10/09/2025 às 14:32</span>
+                    </div>
+                </li>
+                <li class="py-4 flex items-start">
+                    <i data-feather="check-circle" class="h-6 w-6 text-green-500 mr-4"></i>
+                    <div>
+                        <p class="font-medium text-gray-800">Frete concluído com sucesso.</p>
+                        <span class="text-xs text-gray-500">Recebido em 09/09/2025 às 18:10</span>
+                    </div>
+                </li>
+                <li class="py-4 flex items-start">
+                    <i data-feather="x-circle" class="h-6 w-6 text-red-500 mr-4"></i>
+                    <div>
+                        <p class="font-medium text-gray-800">Um frete foi cancelado.</p>
+                        <span class="text-xs text-gray-500">Recebido em 08/09/2025 às 09:45</span>
+                    </div>
+                </li>
+                <li class="py-4 flex items-start">
+                    <i data-feather="user" class="h-6 w-6 text-blue-500 mr-4"></i>
+                    <div>
+                        <p class="font-medium text-gray-800">Novo motorista cadastrado na sua empresa.</p>
+                        <span class="text-xs text-gray-500">Recebido em 07/09/2025 às 16:20</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script>
+    feather.replace();
+</script>
