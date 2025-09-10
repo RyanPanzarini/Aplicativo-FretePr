@@ -10,6 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
+              .btn-primary {
+    background-color: #1E3A8A;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #1D4ED8;
+    border: 1px solid #1D4ED8;
+}
         .btn-primary {
             background-color: #1E3A8A;
             color: white;
@@ -71,13 +83,15 @@
                 <span class="sidebar-text ml-2 text-xl font-bold">FretePR</span>
             </div>
         </div>
+
+        
         
         <nav class="mt-10">
             <a href="company-dashboard.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
                 <i data-feather="home" class="h-5 w-5"></i>
                 <span class="sidebar-text ml-3">Início</span>
             </a>
-            <a href="company-freights.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
+            <a href="company-freight.html" class="flex items-center px-6 py-3 hover:bg-blue-800 transition">
                 <i data-feather="package" class="h-5 w-5"></i>
                 <span class="sidebar-text ml-3">Meus Fretes</span>
             </a>
@@ -99,6 +113,14 @@
             </a>
         </nav>
     </div>
+
+    </nav>
+    </div>
+        <div>
+            <a href="login.html" class="ml-6 btn-primary">Sair</a>
+        </div>
+    </nav>
+    
     
     <!-- Main Content -->
     <div class="main-content">
